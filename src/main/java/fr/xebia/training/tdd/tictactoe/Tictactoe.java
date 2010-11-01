@@ -4,8 +4,8 @@ public class Tictactoe {
 	
 	private Grid grid = new Grid();
 
-	public int put(int col, int row, int player) {
-		if(occupied(col, row) || defyingGravity(col, row)){
+	public int play(int col, int row, int player) {
+		if(grid.invalidPosition(col,row)){
 			return -1;
 		}
 		
@@ -17,14 +17,8 @@ public class Tictactoe {
 	}
 
 	private boolean win(int player) {
-		return grid.hasFullColumnOf(player) || grid.hasFullRowOf(player) || grid.hasFullDiagonalOf(player);
-	}
-
-	private boolean defyingGravity(int col, int row) {
-		return row > 0 && grid.getValue(col,row-1) == 0;
-	}
-
-	private boolean occupied(int col, int row) {
-		return grid.getValue(col,row) != 0;
+		return grid.hasFullColumnOf(player) 
+				|| grid.hasFullRowOf(player) 
+				|| grid.hasFullDiagonalOf(player);
 	}
 }
