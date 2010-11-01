@@ -6,38 +6,23 @@ public class Game {
 
 	public boolean put(int i, int j, int player) {
 		grid[i][j] = player;
-		return playerOneHasColumn() || playerTwoHasColumn() ||
-			   playerOneHasRow() || playerTwoHasRow() ||
-			   playerOneHasDiagonal() || playerTwoHasDiagonal();                                          
+		return hasColumn(1) || hasColumn(2) ||
+			   hasRow(1) || hasRow(2) ||
+			   hasDiagonal(1) || hasDiagonal(2);                                          
 	}
 
-	private boolean playerOneHasColumn() {
-		return (grid[0][0] == 1 && grid[0][1] == 1 && grid[0][2] == 1)
-		 	|| (grid[1][0] == 1  && grid[1][1] == 1 && grid[1][2] == 1) 
-            || (grid[2][0] == 1  && grid[2][1] == 1 && grid[2][2] == 1);
+	private boolean hasColumn(int player) {
+		return (grid[0][0] == player && grid[0][1] == player && grid[0][2] == player)
+		 	|| (grid[1][0] == player  && grid[1][1] == player && grid[1][2] == player) 
+            || (grid[2][0] == player  && grid[2][1] == player && grid[2][2] == player);
 	}                                                   
-	private boolean playerOneHasRow() {
-		return (grid[0][0] == 1 && grid[1][0] == 1 && grid[2][0] == 1)
-		|| (grid[0][1] == 1  && grid[1][1] == 1 && grid[2][1] == 1) 
-		|| (grid[0][2] == 1  && grid[1][2] == 1 && grid[2][2] == 1);
+	private boolean hasRow(int player) {
+		return (grid[0][0] == player && grid[1][0] == player && grid[2][0] == player)
+		|| (grid[0][1] == player  && grid[1][1] == player && grid[2][1] == player) 
+		|| (grid[0][2] == player  && grid[1][2] == player && grid[2][2] == player);
 	}                                                   
-	private boolean playerOneHasDiagonal() {
-		return (grid[0][0] == 1 && grid[1][1] == 1 && grid[2][2] == 1)
-		|| (grid[0][2] == 1  && grid[1][1] == 1 && grid[2][0] == 1); 
-	}                                                   
-	private boolean playerTwoHasColumn() {
-		return (grid[0][0] == 2 && grid[0][1] == 2 && grid[0][2] == 2)
-			|| (grid[1][0] == 2  && grid[1][1] == 2 && grid[1][2] == 2) 
-			|| (grid[2][0] == 2  && grid[2][1] == 2 && grid[2][2] == 2);
+	private boolean hasDiagonal(int player) {
+		return (grid[0][0] == player && grid[1][1] == player && grid[2][2] == player)
+		|| (grid[0][2] == player  && grid[1][1] == player && grid[2][0] == player); 
 	}
-	private boolean playerTwoHasRow() {
-		return (grid[0][0] == 2 && grid[1][0] == 2 && grid[2][0] == 2)
-		|| (grid[0][1] == 2  && grid[1][1] == 2 && grid[2][1] == 2) 
-		|| (grid[0][2] == 2  && grid[1][2] == 2 && grid[2][2] == 2);
-	} 
-	private boolean playerTwoHasDiagonal() {
-		return (grid[0][0] == 2 && grid[1][1] == 2 && grid[2][2] == 2)
-		|| (grid[0][2] == 2  && grid[1][1] == 2 && grid[2][0] == 2); 
-	} 
-
 }

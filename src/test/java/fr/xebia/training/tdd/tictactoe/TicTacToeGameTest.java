@@ -6,7 +6,7 @@ import static org.junit.Assert.assertTrue;
 import org.junit.Test;
 
 public class TicTacToeGameTest {
-	
+
 	@Test
 	public void player1_column_of_3_items_should_win() throws Exception {
 		Game game = new Game();
