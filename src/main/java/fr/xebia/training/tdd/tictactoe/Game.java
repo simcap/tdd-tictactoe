@@ -5,6 +5,9 @@ public class Game {
 	private int[][] grid = new int[3][3];
 
 	public int put(int i, int j, int player) {
+		if(grid[i][j] != 0){
+			return -1;
+		}
 		grid[i][j] = player;
 		if(hasColumn(player) == 1 || hasRow(player) == 1 || hasDiagonal(player) == 1){
 			return 1;
