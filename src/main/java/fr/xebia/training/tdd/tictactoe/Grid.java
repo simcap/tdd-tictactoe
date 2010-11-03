@@ -12,7 +12,7 @@ public class Grid {
 		grid[x][y] = value;
 	}
 
-	public int getValue(int x, int y) {
+	public int valueAt(int x, int y) {
 		return grid[x][y];
 	}
 	
@@ -21,27 +21,27 @@ public class Grid {
 	}
 
 	public boolean defyingGravity(int col, int row) {
-		return row > 0 && getValue(col,row-1) == 0;
+		return row > 0 && valueAt(col,row-1) == 0;
 	}
 
 	public boolean occupied(int col, int row) {
-		return getValue(col,row) != 0;
+		return valueAt(col,row) != 0;
 	}
 
 	public boolean hasFullColumnOf(int value) {
-		return ((getValue(0,0) == value && getValue(0,1) == value && getValue(0,2) == value)
-				|| (getValue(1,0) == value  && getValue(1,1) == value && getValue(1,2) == value) 
-				|| (getValue(2,0) == value  && getValue(2,1) == value && getValue(2,2) == value));
+		return ((valueAt(0,0) == value && valueAt(0,1) == value && valueAt(0,2) == value)
+				|| (valueAt(1,0) == value  && valueAt(1,1) == value && valueAt(1,2) == value) 
+				|| (valueAt(2,0) == value  && valueAt(2,1) == value && valueAt(2,2) == value));
 	}
 	
 	public boolean hasFullRowOf(int value) {
-		return ((getValue(0,0) == value && getValue(1,0) == value && getValue(2,0) == value)
-				|| (getValue(0,1) == value  && getValue(1,1) == value && getValue(2,1) == value) 
-				|| (getValue(0,2) == value  && getValue(1,2) == value && getValue(2,2) == value));
+		return ((valueAt(0,0) == value && valueAt(1,0) == value && valueAt(2,0) == value)
+				|| (valueAt(0,1) == value  && valueAt(1,1) == value && valueAt(2,1) == value) 
+				|| (valueAt(0,2) == value  && valueAt(1,2) == value && valueAt(2,2) == value));
 	}  
 	
 	public boolean hasFullDiagonalOf(int value) {
-		return ((getValue(0,0) == value && getValue(1,1) == value && getValue(2,2) == value)
-				|| (getValue(0,2) == value  && getValue(1,1) == value && getValue(2,0) == value));
+		return ((valueAt(0,0) == value && valueAt(1,1) == value && valueAt(2,2) == value)
+				|| (valueAt(0,2) == value  && valueAt(1,1) == value && valueAt(2,0) == value));
 	};
 }
