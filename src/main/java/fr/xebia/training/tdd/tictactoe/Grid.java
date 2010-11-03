@@ -8,12 +8,12 @@ public class Grid {
 		this.grid = new int[3][3];
 	}
 
-	public void setValue(int x, int y, int value) {
-		grid[x][y] = value;
+	public void setValue(int col, int row, int value) {
+		grid[col][row] = value;
 	}
 
-	public int valueAt(int x, int y) {
-		return grid[x][y];
+	public int valueAt(int col, int row) {
+		return grid[col][row];
 	}
 	
 	public boolean invalidPosition(int col, int row) {
