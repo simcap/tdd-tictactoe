@@ -43,5 +43,17 @@ public class Grid {
 	public boolean hasFullDiagonalOf(int value) {
 		return ((valueAt(0,0) == value && valueAt(1,1) == value && valueAt(2,2) == value)
 				|| (valueAt(0,2) == value  && valueAt(1,1) == value && valueAt(2,0) == value));
+	}
+
+	public boolean isFull() {
+		for (int i = 0; i < grid.length; i++) {
+			for (int j = 0; j < grid.length; j++) {
+				if(valueAt(i, j) == 0){
+					return false;
+				}
+			}
+		}
+		return true;
 	};
+	
 }

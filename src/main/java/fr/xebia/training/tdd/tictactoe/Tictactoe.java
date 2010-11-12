@@ -10,9 +10,11 @@ public class Tictactoe {
 		}
 		
 		grid.setValue(col, row, player);
-		
+
 		if(win(player)){
 			return 1;
+		} else if(grid.isFull()){
+			return -1;
 		} else return 0;
 	}
 
@@ -21,4 +23,5 @@ public class Tictactoe {
 				|| grid.hasFullRowOf(player) 
 				|| grid.hasFullDiagonalOf(player);
 	}
+	
 }
